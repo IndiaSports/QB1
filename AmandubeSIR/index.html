@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>QuicklyGrow — 6 Month Proposal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #090A0F;
+      --card-bg: #11131A;
+      --card-inner: #181B24;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(255, 255, 255, 0.2);
+      --text-main: #F8FAFC;
+      --text-muted: #8E96A4;
+      --accent-gold: #D4AF37;
+      --accent-blue: #4285F4;
+      --success: #10B981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 12px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    .proposal-card {
+      background: var(--card-bg);
+      border-radius: 28px;
+      padding: 24px 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.56);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proposal-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    }
+
+    /* HEADER COMPACT */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    .agency-name {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    /* CLIENT META STRIP */
+    .meta-strip {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 11px;
+    }
+
+    .meta-item {
+      display: flex;
+      gap: 6px;
+    }
+
+    .meta-label {
+      color: var(--text-muted);
+    }
+
+    .meta-val {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* INCLUDED SERVICES PILLS */
+    .services-tag-group {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+
+    .service-pill {
+      flex: 1;
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .service-pill strong {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .service-pill span {
+      font-size: 9px;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 1px;
+    }
+
+    /* PRICING DISPLAY CARD */
+    .pricing-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .price-row.discount {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .final-price {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .final-price-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .effective-note {
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+
+    .amount {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    /* PAYMENT INTERACTION ZONE */
+    .payment-zone {
+      background: var(--card-inner);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .payment-id-badge {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .payment-id-badge code {
+      color: var(--text-main);
+      font-weight: 600;
+      background: rgba(255,255,255,0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* CUSTOM SVG CHECKBOX INTEGRATION */
+    .cbx-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      cursor: pointer;
+    }
+
+    .cbx-wrapper span {
+      font-size: 11px;
+      color: var(--text-muted);
+      user-select: none;
+    }
+
+    .check {
+      cursor: pointer;
+      position: relative;
+      width: 18px;
+      height: 18px;
+      -webkit-tap-highlight-color: transparent;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .check:before {
+      content: "";
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(66, 133, 244, 0.1);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .check svg {
+      position: relative;
+      z-index: 1;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: #64748b;
+      stroke-width: 1.5;
+      transform: translate3d(0, 0, 0);
+      transition: all 0.2s ease;
+    }
+
+    .check svg path {
+      stroke-dasharray: 60;
+      stroke-dashoffset: 0;
+    }
+
+    .check svg polyline {
+      stroke-dasharray: 22;
+      stroke-dashoffset: 66;
+    }
+
+    .check:hover:before {
+      opacity: 1;
+    }
+
+    .check:hover svg {
+      stroke: var(--accent-blue);
+    }
+
+    #cbx:checked + .check svg {
+      stroke: var(--accent-blue);
+    }
+
+    #cbx:checked + .check svg path {
+      stroke-dashoffset: 60;
+      transition: all 0.3s linear;
+    }
+
+    #cbx:checked + .check svg polyline {
+      stroke-dashoffset: 42;
+      transition: all 0.2s linear;
+      transition-delay: 0.15s;
+    }
+
+    /* LUXURY PAY BUTTON STYLING */
+    .button-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .button {
+      --black: #000000;
+      --ch-black: #141414;
+      --eer-black: #1b1b1b;
+      --night-rider: #2e2e2e;
+      --white: #ffffff;
+      --af-white: #f3f3f3;
+      --ch-white: #e1e1e1;
+
+      border-radius: 14px;
+      width: 100%;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0px 15px;
+      border: none;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition-duration: 0.2s;
+      background-color: var(--ch-black);
+      text-decoration: none;
+    }
+
+    .button:before,
+    .button:after {
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      border-radius: 16px;
+      background: linear-gradient(
+        45deg,
+        var(--ch-black),
+        var(--eer-black),
+        var(--night-rider),
+        var(--ch-white),
+        var(--night-rider),
+        var(--eer-black),
+        var(--ch-black),
+        var(--ch-black)
+      );
+      background-size: 400%;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
+      z-index: -1;
+      animation: steam 20s linear infinite;
+    }
+
+    @keyframes steam {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
+    }
+
+    .button:after {
+      filter: blur(14px);
+      opacity: 0.5;
+    }
+
+    .button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+      animation: none;
+    }
+
+    .button:disabled:before,
+    .button:disabled:after {
+      display: none;
+    }
+
+    /* COMPACT FOOTER METADATA */
+    .terms-micro {
+      font-size: 9px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 14px;
+      line-height: 1.4;
+    }
+
+    .terms-micro a {
+      color: var(--text-muted);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="proposal-card">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="brand-group">
+        <img class="logo" src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6a69c119dfd6c4.93432994_20260624_124814.jpg" alt="Logo" />
+        <div>
+          <h1 class="agency-name">QuicklyGrow</h1>
+          <div class="subtitle">Ad Services Proposal</div>
+        </div>
+      </div>
+      <div class="badge">6 MONTHS</div>
+    </div>
+
+    <!-- CLIENT STRIP -->
+    <div class="meta-strip">
+      <div class="meta-item">
+        <span class="meta-label">TG:</span>
+        <span class="meta-val">@AmandubeSIR</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">WA:</span>
+        <span class="meta-val">+91 82332 10450</span>
+      </div>
+    </div>
+
+    <!-- SERVICES INCLUDED -->
+    <div class="services-tag-group">
+      <div class="service-pill">
+        <strong>Ads Management</strong>
+        <span>Optimization</span>
+      </div>
+      <div class="service-pill">
+        <strong>Landing Page</strong>
+        <span>Included</span>
+      </div>
+      <div class="service-pill">
+        <strong>AI Creatives</strong>
+        <span>Creative Support</span>
+      </div>
+    </div>
+
+    <!-- PRICING SUMMARY -->
+    <div class="pricing-box">
+      <div class="price-row">
+        <span>Standard Plan (6M)</span>
+        <span>₹48,000</span>
+      </div>
+      <div class="price-row discount">
+        <span>Instant Savings (10%)</span>
+        <span>- ₹4,800</span>
+      </div>
+      <div class="final-price">
+        <div>
+          <div class="final-price-label">Total Payable</div>
+          <div class="effective-note">₹7,200/mo effective</div>
+        </div>
+        <div class="amount">₹43,200</div>
+      </div>
+    </div>
+
+    <!-- PAYMENT INTERACTION PANEL -->
+    <div class="payment-zone">
+      <div class="payment-id-badge">
+        UPI ID: <code>yahooo999@apl</code>
+      </div>
+
+      <!-- CUSTOM ANIMATED SVG CHECKBOX -->
+      <label class="cbx-wrapper" for="cbx">
+        <input type="checkbox" id="cbx" style="display: none;" onchange="togglePayment()" />
+        <div class="check">
+          <svg width="18px" height="18px" viewBox="0 0 18 18">
+            <path d="M1,9 L1,3.5 C1,2.11928813 2.11928813,1 3.5,1 L14.5,1 C15.8807119,1 17,2.11928813 17,3.5 L17,14.5 C17,15.8807119 15.8807119,17 14.5,17 L3.5,17 C2.11928813,17 1,15.8807119 1,14.5 L1,9 Z"></path>
+            <polyline points="1 9 7 14 15 4"></polyline>
+          </svg>
+        </div>
+        <span>I agree to service terms & non-refundable policy</span>
+      </label>
+
+      <!-- LUXURY BUTTON -->
+      <div class="button-container">
+        <button id="payButton" class="button" disabled onclick="makePayment()">
+          <span>Pay Now — ₹43,200</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- TERMS FOOTER METADATA -->
+    <div class="terms-micro">
+      🔒 256-Bit Encrypted Payment • Ad budget excluded<br>
+      © 2026 QuicklyGrow. Support: Telegram @Quicklygrow
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function togglePayment() {
+    const checkbox = document.getElementById("cbx");
+    const button = document.getElementById("payButton");
+    button.disabled = !checkbox.checked;
+  }
+
+  function makePayment() {
+    const checkbox = document.getElementById("cbx");
+    if (!checkbox.checked) return;
+
+    const upiId = "yahooo999@apl";
+    const amount = "43200";
+    const name = "QuicklyGrow";
+    const upiUrl = `upi://pay?pa=${encodeURIComponent(upiId)}&pn=${encodeURIComponent(name)}&am=${encodeURIComponent(amount)}&cu=INR`;
+
+    window.location.href = upiUrl;
+  }
+</script>
+
+</body>
+</html>
