@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2535164056997087');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2535164056997087&ev=PageView&noscript=1"/></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahenshah 2.0 (Official)</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: #0B0E14;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            padding: 24px 16px 100px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Profile Section */
+        .profile-box {
+            text-align: center;
+            padding-top: 10px;
+        }
+
+        .profile-box img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid #0088cc;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 136, 204, 0.4);
+            margin-bottom: 10px;
+        }
+
+        .profile-box h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(0, 136, 204, 0.2);
+            color: #0088cc;
+            border: 1px solid rgba(0, 136, 204, 0.4);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        /* Content Card */
+        .card {
+            background: #151A23;
+            border: 1px solid #232A36;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h2 {
+            font-size: 1.25rem;
+            color: #28a745;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        /* Bullet Points */
+        .features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            margin: 12px 0;
+        }
+
+        .features li {
+            font-size: 0.95rem;
+            color: #D1D5DB;
+            display: flex;
+            align-items: center;
+        }
+
+        .features li::before {
+            content: "🔥";
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+
+        /* High-Converting CTA Button */
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #0088cc, #00A6FF);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 30px;
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Fast CSS Shine Effect */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100px;
+            width: 70px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: shine 2.5s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100px; }
+            20% { left: 100%; }
+            100% { left: 100%; }
+        }
+
+        .info {
+            font-size: 0.88rem;
+            color: #9CA3AF;
+            line-height: 1.4;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #6B7280;
+        }
+
+        /* Fixed Bottom Bar */
+        .curved-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(11, 14, 20, 0.95);
+            padding: 12px 16px;
+            border-top: 1px solid #232A36;
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-btn {
+            width: 100%;
+            max-width: 408px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Profile Header -->
+    <div class="profile-box">
+        <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6ac891eb36aea3.58777106_photo_2026-10-09_12-34-00.jpg" alt="Shahenshah 2.0" loading="eager">
+        <h1>Shahenshah 2.0</h1>
+        <span class="badge">VERIFIED CHANNEL</span>
+    </div>
+
+    <!-- Main Call To Action -->
+    <div class="card">
+        <h2>🔥 100% Accurate Predictions</h2>
+        <p class="info">Cricket, Toss, & Match Winning Reports Free Me Paaye!</p>
+        <a href="https://t.me/+bypJgeV3rfpmYTRl" class="btn" style="margin-top: 14px;">
+            JOIN TELEGRAM CHANNEL NOW
+        </a>
+    </div>
+
+    <!-- Key Features -->
+    <div class="card">
+        <h2>Aapko Kya Milega?</h2>
+        <ul class="features">
+            <li>Daily Toss & Match Predictions</li>
+            <li>Back-to-Back Match Pass History</li>
+            <li>100% Free VIP Entry Updates</li>
+            <li>Real-Time Live Analysis</li>
+        </ul>
+    </div>
+
+    <!-- Trust Factor -->
+    <div class="card">
+        <p class="info">
+            ⚡ 50,000+ members already winning daily with Shahenshah 2.0. Don't miss today's match update!
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        Official Channel • Shahenshah 2.0
+    </div>
+</div>
+
+<!-- Sticky Bottom CTA -->
+<div class="curved-nav">
+    <a href="https://t.me/+bypJgeV3rfpmYTRl" class="btn nav-btn">
+        👉 अभी फ्री टेलीग्राम ज्वाइन करें
+    </a>
+</div>
+
+</body>
+</html>
