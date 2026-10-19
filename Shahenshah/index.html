@@ -1,251 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2535164056997087');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2535164056997087&ev=PageView&noscript=1"/></noscript>
-    <!-- End Meta Pixel Code -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Service Suspended | Quickly Grow</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --accent: #ff3b30;
+      --accent-glow: rgba(255, 59, 48, 0.15);
+      --glass: rgba(255, 255, 255, 0.88);
+      --border: rgba(0, 0, 0, 0.06);
+      --text: #0f0f14;
+      --subtext: #666672;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahenshah 2.0 (Official)</title>
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        body {
-            background: #0B0E14;
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f8fc;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 440px;
-            padding: 24px 16px 100px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
+    .nebula-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 15% 25%, rgba(255, 59, 48, 0.08) 0%, transparent 45%),
+                  radial-gradient(circle at 85% 75%, rgba(112, 0, 255, 0.1) 0%, transparent 45%);
+      animation: nebula-drift 22s ease-in-out infinite alternate;
+    }
 
-        /* Profile Section */
-        .profile-box {
-            text-align: center;
-            padding-top: 10px;
-        }
+    @keyframes nebula-drift {
+      0% { transform: translate(-4%, -3%) rotate(0deg); }
+      100% { transform: translate(4%, 3%) rotate(4deg); }
+    }
 
-        .profile-box img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            border: 3px solid #0088cc;
-            object-fit: cover;
-            box-shadow: 0 0 20px rgba(0, 136, 204, 0.4);
-            margin-bottom: 10px;
-        }
+    .top-nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 68px;
+      z-index: 1000;
+      background: var(--glass);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      max-width: 480px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
-        .profile-box h1 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.3px;
+    }
 
-        .badge {
-            display: inline-block;
-            background: rgba(0, 136, 204, 0.2);
-            color: #0088cc;
-            border: 1px solid rgba(0, 136, 204, 0.4);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-top: 6px;
-        }
+    .nav-logo {
+      height: 38px;
+      width: 38px;
+      border-radius: 14px;
+      object-fit: cover;
+      background: #eee;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
 
-        /* Content Card */
-        .card {
-            background: #151A23;
-            border: 1px solid #232A36;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-        }
+    .container {
+      width: 100%;
+      max-width: 440px;
+      margin-top: 50px;
+    }
 
-        .card h2 {
-            font-size: 1.25rem;
-            color: #28a745;
-            margin-bottom: 8px;
-            font-weight: 700;
-        }
+    .card-frame {
+      position: relative;
+      border-radius: 34px;
+      padding: 2px;
+      background: linear-gradient(130deg, #ff4d4d, #7000ff, #ff4d4d);
+      background-size: 200% 200%;
+      animation: border-flow 5s linear infinite;
+      box-shadow: 0 28px 48px rgba(0,0,0,0.06);
+    }
 
-        /* Bullet Points */
-        .features {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            text-align: left;
-            margin: 12px 0;
-        }
+    @keyframes border-flow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        .features li {
-            font-size: 0.95rem;
-            color: #D1D5DB;
-            display: flex;
-            align-items: center;
-        }
+    .card-inner {
+      background: #fff;
+      border-radius: 31px;
+      padding: 36px 24px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
 
-        .features li::before {
-            content: "🔥";
-            margin-right: 10px;
-            font-size: 1rem;
-        }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      color: #ff3b30;
+      background: #ffebeb;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
 
-        /* High-Converting CTA Button */
-        .btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #0088cc, #00A6FF);
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 30px;
-            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.2s ease;
-        }
+    .status-badge i {
+      font-size: 0.8rem;
+    }
 
-        .btn:active {
-            transform: scale(0.98);
-        }
+    .main-heading {
+      font-size: 1.7rem;
+      font-weight: 800;
+      line-height: 1.25;
+      color: #121214;
+      letter-spacing: -0.5px;
+    }
 
-        /* Fast CSS Shine Effect */
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100px;
-            width: 70px;
-            height: 100%;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
-            transform: skewX(-25deg);
-            animation: shine 2.5s infinite;
-        }
+    .notice-box {
+      background: #fbfbfd;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      padding: 16px 18px;
+      font-size: 0.88rem;
+      color: var(--subtext);
+      line-height: 1.6;
+    }
 
-        @keyframes shine {
-            0% { left: -100px; }
-            20% { left: 100%; }
-            100% { left: 100%; }
-        }
+    .notice-box strong {
+      color: #121214;
+    }
 
-        .info {
-            font-size: 0.88rem;
-            color: #9CA3AF;
-            line-height: 1.4;
-        }
+    .btn-animate {
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1);
+      will-change: transform, opacity;
+    }
 
-        .footer {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #6B7280;
-        }
+    .btn-animate:active {
+      transform: scale(0.95);
+      opacity: 0.88;
+    }
 
-        /* Fixed Bottom Bar */
-        .curved-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(11, 14, 20, 0.95);
-            padding: 12px 16px;
-            border-top: 1px solid #232A36;
-            backdrop-filter: blur(8px);
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-        }
+    .tg-reactivate-btn {
+      width: 100%;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #0a0a0a;
+      color: #fff;
+      padding: 18px;
+      border-radius: 20px;
+      font-weight: 650;
+      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+      position: relative;
+      overflow: hidden;
+      margin-top: 8px;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    }
 
-        .nav-btn {
-            width: 100%;
-            max-width: 408px;
-        }
-    </style>
+    .tg-reactivate-btn i {
+      font-size: 1.15rem;
+      color: #29b6f6;
+    }
+
+    .tg-reactivate-btn::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+      transform: skewX(-25deg);
+      animation: shine 3.5s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 200%; }
+    }
+
+    .footer-note {
+      font-size: 0.75rem;
+      color: #9c9ca4;
+      margin-top: 4px;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Profile Header -->
-    <div class="profile-box">
-        <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6ac891eb36aea3.58777106_photo_2026-10-09_12-34-00.jpg" alt="Shahenshah 2.0" loading="eager">
-        <h1>Shahenshah 2.0</h1>
-        <span class="badge">VERIFIED CHANNEL</span>
-    </div>
+  <div class="nebula-bg"></div>
 
-    <!-- Main Call To Action -->
-    <div class="card">
-        <h2>🔥 100% Accurate Predictions</h2>
-        <p class="info">Cricket, Toss, & Match Winning Reports Free Me Paaye!</p>
-        <a href="https://t.me/+bypJgeV3rfpmYTRl" class="btn" style="margin-top: 14px;">
-            JOIN TELEGRAM CHANNEL NOW
+  <!-- Top Bar -->
+  <nav class="top-nav">
+    <div class="nav-brand">
+      <img src="https://d1yei2z3i6k35z.cloudfront.net/13184094/6a69c119dfd6c4.93432994_20260624_124814.jpg" class="nav-logo" alt="Logo">
+      <span>QUICKLY</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card-frame">
+      <div class="card-inner">
+        <div class="status-badge">
+          <i class="fas fa-exclamation-circle"></i> Service Suspended
+        </div>
+
+        <h1 class="main-heading">This Landing Page Is Currently Inactive</h1>
+
+        <div class="notice-box">
+          Access has been temporarily restricted due to an <strong>unpaid invoice / pending dues</strong>. Please settle the outstanding balance to restore live services.
+        </div>
+
+        <a id="reactivateLink" href="#" target="_blank" class="tg-reactivate-btn btn-animate">
+          <i class="fab fa-telegram-plane"></i> Request To Turn On Page
         </a>
-    </div>
 
-    <!-- Key Features -->
-    <div class="card">
-        <h2>Aapko Kya Milega?</h2>
-        <ul class="features">
-            <li>Daily Toss & Match Predictions</li>
-            <li>Back-to-Back Match Pass History</li>
-            <li>100% Free VIP Entry Updates</li>
-            <li>Real-Time Live Analysis</li>
-        </ul>
+        <div class="footer-note">
+          Instant reactivation upon payment verification.
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- Trust Factor -->
-    <div class="card">
-        <p class="info">
-            ⚡ 50,000+ members already winning daily with Shahenshah 2.0. Don't miss today's match update!
-        </p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        Official Channel • Shahenshah 2.0
-    </div>
-</div>
-
-<!-- Sticky Bottom CTA -->
-<div class="curved-nav">
-    <a href="https://t.me/+bypJgeV3rfpmYTRl" class="btn nav-btn">
-        👉 अभी फ्री टेलीग्राम ज्वाइन करें
-    </a>
-</div>
+  <script>
+    // Current page URL fetch karke Telegram link me encode karega
+    const currentUrl = window.location.href;
+    const message = encodeURIComponent(`${currentUrl}\nThis landing page is not working due to pending payment. Please reactivate it.`);
+    document.getElementById('reactivateLink').href = `https://t.me/quicklygrow?text=${message}`;
+  </script>
 
 </body>
 </html>
